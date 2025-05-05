@@ -7,6 +7,7 @@ use reth_ethereum::chainspec::ChainSpecBuilder;
 use reth_ethereum::provider::{
     db::{mdbx::DatabaseArguments, open_db_read_only, ClientVersion, DatabaseEnv},
     providers::StaticFileProvider,
+    HeaderProvider,
     ProviderFactory,
 };
 
@@ -25,5 +26,15 @@ pub fn build_provider_factory(db_path: &Path) -> Result<LocalProviderFactory> {
         StaticFileProvider::read_only(db_path.join("static_files"), true)?,
     );
     Ok(factory)
+}
+
+pub fn block_num_to_timestamp(
+    provider: &LocalProviderFactory,
+    block_num: u64,
+) -> Result<u64> {
+    provider
+        .header_by_number(block_num)?
+        .map(|h| h.timestamp)
+        .ok_or_else(|| eyre::eyre!("Header not found for block number {}", block_num))
 }
 

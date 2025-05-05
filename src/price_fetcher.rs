@@ -131,6 +131,7 @@ impl PriceFetcher {
     }
 
     pub fn fetch_prices_for_block(&self, block_num: u64) -> Result<Vec<PriceFetcherResult>> {
+        let block_timestamp = reth_utils::block_num_to_timestamp(&self.provider_factory, block_num)?;
         let hist_provider = self.provider_factory.history_by_block_number(block_num)?;
         self.price_sources
             .iter()
@@ -159,6 +160,7 @@ impl PriceFetcher {
                     };
                 Ok(PriceFetcherResult {
                     block_num,
+                    block_timestamp,
                     source: ps.protocol.name(),
                     price,
                     quote_token,
@@ -172,6 +174,7 @@ impl PriceFetcher {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct PriceFetcherResult {
     pub block_num: u64,
+    pub block_timestamp: u64,
     pub source: String,
     #[serde(serialize_with = "serialize_u256_to_dec")]
     pub price: U256,
