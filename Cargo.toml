@@ -1,0 +1,28 @@
+[package]
+name = "pool-price-fetcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dotenv = "0.15.0"
+eyre = "0.6.12"
+futures = "0.3.31"
+tokio = { version = "1.44.2", features = ["full"] }
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+alloy = { version = "0.14.0", features = ["full", "node-bindings"] }
+reth-ethereum = { git = "https://github.com/paradigmxyz/reth", tag = "v1.3.12", features = ["test-utils", "node", "provider", "pool", "network", "rpc"] }
+fxhash = "0.2.1"
+toml = "0.8.22"
+serde = "1.0.219"
+url = "2.5.4"
+async-trait = "0.1.88"
+envsubst = "0.2.1"
+derive-new = "0.7.0"
+rayon = "1.10.0"
+clap = "4.5.37"
+parquet = "55.0.0"
+serde_arrow = { version = "0.13.3", features = ["arrow-55"] }
+uuid-b64 = "0.2.0"
+arrow = "55.0.0"
+serde_json = "1.0.140"

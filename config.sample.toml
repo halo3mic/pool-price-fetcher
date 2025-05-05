@@ -1,0 +1,93 @@
+
+precision = 15
+
+[[chain_configs]]
+chain_id = 1
+default_start_block = 20866918
+default_end_block = 22385293
+reth_db_path = "${ETH_RETH_DB_PATH}"
+rpc_url = "${ETH_RPC_URL}"
+
+## Uniswap V3
+
+[[chain_configs.price_sources]]
+name = "usdc_eth_univ3"
+inverse_it = true
+protocol = { type = "univ3", pool = "0x88e6A0c2dDD26FEEb64F039a2c41296FcB3f5640" }
+
+[[chain_configs.price_sources]]
+name = "wbtc_usdc_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0x99ac8cA7087fA4A2A1FB6357269965A2014ABc35" }
+
+[[chain_configs.price_sources]]
+name = "eth_usdt_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0x4e68Ccd3E89f51C3074ca5072bbAC773960dFa36" }
+
+[[chain_configs.price_sources]]
+name = "wbtc_usdt_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0x9Db9e0e53058C89e5B94e29621a205198648425B" }
+
+[[chain_configs.price_sources]]
+name = "usdc_usdt_univ3"
+inverse_it = true
+protocol = { type = "univ3", pool = "0x3416cF6C708Da44DB2624D63ea0AAef7113527C6" }
+
+[[chain_configs.price_sources]]
+name = "aave_eth_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0x5aB53EE1d50eeF2C1DD3d5402789cd27bB52c1bB" }
+
+[[chain_configs.price_sources]]
+name = "uni_eth_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0x1d42064Fc4Beb5F8aAF85F4617AE8b3b5B8Bd801" }
+
+[[chain_configs.price_sources]]
+name = "dai_usdc_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0x5777d92f208679DB4b9778590Fa3CAB3aC9e2168" }
+
+[[chain_configs.price_sources]]
+name = "eth_eigen_univ3"
+inverse_it = true
+protocol = { type = "univ3", pool = "0xC2C390c6CD3C4e6c2b70727d35a45e8a072F18cA" }
+
+[[chain_configs.price_sources]]
+name = "eth_cow_univ3"
+inverse_it = true
+protocol = { type = "univ3", pool = "0xFCfDFC98062d13a11cec48c44E4613eB26a34293" }
+
+[[chain_configs.price_sources]]
+name = "ena_eth_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0xc3Db44ADC1fCdFd5671f555236eae49f4A8EEa18" }
+
+[[chain_configs.price_sources]]
+name = "link_eth_univ3"
+inverse_it = false
+protocol = { type = "univ3", pool = "0xa6Cc3C2531FdaA6Ae1A3CA84c2855806728693e8" }
+
+## Uniswap V2
+
+[[chain_configs.price_sources]]
+name = "eth_spx_univ2"
+inverse_it = true
+protocol = { type = "univ2", pool = "0x52c77b0CB827aFbAD022E6d6CAF2C44452eDbc39" }
+
+[[chain_configs.price_sources]]
+name = "pepe_eth_univ2"
+inverse_it = false
+protocol = { type = "univ2", pool = "0xA43fe16908251ee70EF74718545e4FE6C5cCEc9f" }
+
+[[chain_configs.price_sources]]
+name = "mog_eth_univ2"
+inverse_it = false
+protocol = { type = "univ2", pool = "0xc2eaB7d33d3cB97692eCB231A5D0e4A649Cb539d" }
+
+[[chain_configs.price_sources]]
+name = "doge_eth_univ2"
+inverse_it = false
+protocol = { type = "univ2", pool = "0x308C6fbD6a14881Af333649f17f2FdE9cd75e2a6" }
