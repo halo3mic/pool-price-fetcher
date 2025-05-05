@@ -124,7 +124,7 @@ fn create_dir(path: &Path) -> Result<()> {
     if path.exists() {
         Err(eyre::eyre!("Target {:?} already exists", path))
     } else {
-        std::fs::create_dir(path)?;
+        std::fs::create_dir_all(path)?;
         Ok(())
     }
 }
