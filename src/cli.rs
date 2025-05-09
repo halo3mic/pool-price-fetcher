@@ -56,7 +56,7 @@ pub struct FetchPricesArgs {
     #[arg(long, default_value = "1")]
     pub chain_id: u64,
 
-    #[arg(value_parser = BlockRange::from_str)]
+    #[arg(long, value_parser = BlockRange::from_str)]
     pub block_range: BlockRange,
 
     #[arg(long)]
